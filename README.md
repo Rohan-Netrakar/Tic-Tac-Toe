@@ -60,3 +60,16 @@ To run this project locally, follow these steps:
 
 ## Project Structure
 
+- `index.html`: The main HTML file that contains the structure of the game.
+- `styles.css`: The CSS file for styling the game.
+- `script.js`: The JavaScript file that contains the game logic and interactivity.
+- `README.md`: This README file.
+
+## License
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software as long as the original license is included.
+
+---
+
+Enjoy playing the Tic-Tac-Toe game! If you have any questions or suggestions, feel free to open an issue or submit a pull request.
+
