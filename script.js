@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (checkWin()) {
             gameStatusDisplay.textContent = `Player ${currentPlayer} wins!`;
+            highlightWinningCells();
             gameActive = false;
             return;
         }
@@ -62,6 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return gameState.every(cell => cell !== "");
     }
 
+    function highlightWinningCells() {
+        for (let condition of winningConditions) {
+            let [a, b, c] = condition;
+            if (gameState[a] !== "" && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+                // Add a class to highlight the winning cells
+                cells[a].classList.add('winning-cell');
+                cells[b].classList.add('winning-cell');
+                cells[c].classList.add('winning-cell');
+                break;
+            }
+        }
+    }
+
     function restartGame() {
         currentPlayer = 1;
         gameActive = true;
@@ -70,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPlayerDisplay.textContent = currentPlayer;
         cells.forEach(cell => {
             cell.textContent = "";
+            cell.classList.remove('winning-cell'); // Remove winning-cell class on restart
         });
     }
 
