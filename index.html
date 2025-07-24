@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Modern Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<body style="background-image: url('https://images.unsplash.com/photo-1454117096348-e4abbeba002c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<body>
     <div class="game-container">
         <h1>Tic-Tac-Toe</h1>
+        
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="pvp">Player vs Player</button>
+            <button class="mode-btn" data-mode="pvc">Player vs Computer</button>
+        </div>
+        
+        <div class="players">
+            <div class="player-indicator player-x active">
+                <span class="player-symbol">X</span>
+                <span class="player-name">Player 1</span>
+            </div>
+            <div class="player-indicator player-o">
+                <span class="player-symbol">O</span>
+                <span class="player-name" id="player2Name">Player 2</span>
+            </div>
+        </div>
+        
         <div class="game-board" id="gameBoard">
             <div class="cell" data-cell="0"></div>
             <div class="cell" data-cell="1"></div>
@@ -20,12 +38,15 @@
             <div class="cell" data-cell="7"></div>
             <div class="cell" data-cell="8"></div>
         </div>
+        
         <div class="game-info" id="gameInfo">
             <p>Player <span id="currentPlayer">1</span>'s turn</p>
             <p id="gameStatus">Game in progress...</p>
-            <button id="restartButton">Restart Game</button>
+            <button id="restartButton">
+                <i class="fas fa-redo-alt"></i> Restart Game
+            </button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
